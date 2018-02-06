@@ -1,0 +1,57 @@
+.tab-items{
+	display: inline-block;
+	margin: 10px auto;
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.24);
+	max-width: 800px;
+	padding: 2px;
+	border-radius: 2px;
+	text-align: left;
+}
+
+.tab-item {
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	vertical-align: middle;
+	margin: 2px;
+	padding: 2px 3px;
+	border-radius: 2px;
+	border: 1px solid gray;
+	user-select: none;
+}
+
+input[type="text"].tab-item{
+	padding-right: 30px;
+}
+
+.tab-btn{
+	background: green;
+	color: white;
+	border: 0;
+	border-left: 1px solid gray;
+	height: 24px;
+	padding: 2px 5px;
+	margin-left: -34px;
+	cursor: pointer;
+}
+
+.tab-btn:hover{
+	background: gray;
+}
+
+.tab-delete{
+	display: inline-block;
+	margin-left: 3px;
+	width:18px;
+	height:18px;
+	line-height:18px;
+	text-align: center;
+	background: red;
+	border-radius: 2px;
+	color: white;
+	cursor: pointer;
+}
+
+.tab-delete:hover{
+	background: gray;
+}
