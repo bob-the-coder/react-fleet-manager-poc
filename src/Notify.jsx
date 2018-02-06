@@ -10,15 +10,15 @@ class Notify extends Component{
 		}
 	}
 
-	dismiss(){};
-
 	componentDidMount(){
 		let $this = this;
 		this.setState({
 			on: true
 		});
 		setTimeout(function(){
-			$this.dismiss();
+			$this.setState({
+				on: false
+			})
 		}, 2000);
 	}
 

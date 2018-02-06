@@ -1,0 +1,39 @@
+.i-leg{
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.i-leg h4 {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.inq-col-b {
+	display: inline-block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-right: 15px;
+}
+
+.inq-col-b + .inq-col-b{
+	border-left: 1px solid;
+	padding-left: 15px;
+}
+
+.inq-col {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-top: 1px solid;
+	display: inline-block;
+	width: 33%;
+}
+
+.inq-col + .inq-col {
+	border-left: 1px solid;
+	padding-left: 15px;
+}
+
+.inq-col, .inq-col-b{
+	border-color: #efefef !important;
+}
