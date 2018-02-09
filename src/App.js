@@ -10,6 +10,7 @@ import {
 
 import LoginForm from './login/login-form.js';
 import TripPlanner from './trip/plan/trip-planner.js';
+import TripPlannerControls from './trip/plan/trip-planner-controls.js';
 
 class App extends Component {
   render() {
@@ -26,7 +27,9 @@ class App extends Component {
           		<Route exact path='/' component={LoginForm} />
           		<Route exact path='/trip/plan' component={TripPlanner} />
           	</div>
-          	<div className='app-side'></div>
+          	<div className='app-side'>
+          		<Route exact path='/trip/plan' component={TripPlannerControls} />
+          	</div>
           </div>
         </div>
       </HashRouter>

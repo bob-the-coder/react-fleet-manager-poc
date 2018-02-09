@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SelectableOptions from '../../selectable-options/selectable-options.js';
 
 import TripSegmentModel from './trip-segment.js';
 import './trip-segment.css';
@@ -54,7 +55,7 @@ class TripSegmentPlanner extends Component {
 			<div className='white-block clearfix'>
 				<div className='ts-col-half'>
 					<div className='clearfix'>
-						<b>{this.props.index} Departure</b>
+						<b>Departure</b>
 						<input className='input' ref='dep' defaultValue={$$segment.departure} />
 					</div>
 					<div className='clearfix'>
@@ -65,6 +66,7 @@ class TripSegmentPlanner extends Component {
 				<div className='ts-col-half'>
 					<div>
 						<b>Transport</b>
+						<SelectableOptions />
 					</div>
 				</div>
 				<div style={{textAlign: 'right'}}>

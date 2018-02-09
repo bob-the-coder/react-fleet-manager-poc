@@ -63,3 +63,11 @@ body{
   width: 800px;
   padding: 20px;
 }
+
+.fixed {
+  position: fixed;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}

@@ -13,6 +13,13 @@
     clear: both;
 }
 
+.border-block {
+	border: 1px solid lightgray;
+	padding: 5px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
 .input {
 	display: inline-block;
 	margin-top: 10px;
