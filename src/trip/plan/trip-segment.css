@@ -1,0 +1,17 @@
+.ts-col-half {
+	width: 50%;
+	float:left;
+}
+
+.ts-col-half > div > .input {
+	width: 230px;
+	float: right;
+	margin-right: 20px;
+}
+
+.ts-col-half b {
+	display: inline-block;
+	float:left;
+	margin-top: 10px;
+	line-height: 20px;
+}

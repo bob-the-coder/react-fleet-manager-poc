@@ -46,13 +46,20 @@ body{
   display:block;
   min-height: calc(100vh - 50px);
   top: 50px;
-  width: 800px;
+  width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
-.white-block {
-  background: white;
-  border: 1px solid lightgray;
-  border-radius: 4px;
+.app-menu, .app-side, .app-content {
+  float: left;
+}
+
+.app-menu, .app-side {
+  width: 200px;
+  min-height: 1px;
+}
+
+.app-content {
+  width: 800px;
+  padding: 20px;
 }

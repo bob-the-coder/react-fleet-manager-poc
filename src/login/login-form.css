@@ -1,0 +1,33 @@
+.lf {
+	background: white;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+	padding-bottom: 20px;
+	width: 300px;
+	margin: 15vh auto 0 auto;
+	overflow: hidden;
+}
+
+.lf .input{
+	width: 100%;
+}
+
+.lf-line {
+	min-height: 1px;
+	margin: 10px 30px;
+}
+
+.lf-banner{
+	height: 50px;
+	background: #222;
+	margin-bottom: 40px;
+}
+
+.lf .btn {
+	width: 100%;
+}
+
+.lf-center {
+	text-align: center;
+}

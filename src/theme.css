@@ -1,0 +1,62 @@
+.white-block {
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.clearfix:after {
+	display: table;
+	content: '';
+    clear: both;
+}
+
+.input {
+	display: inline-block;
+	margin-top: 10px;
+	height: 20px;
+	padding: 0;
+	padding-left: 5px;
+	outline: none !important;
+	border: 0;
+	border-bottom: 2px solid lightblue;
+}
+
+.input:focus{
+	border-bottom-width: 4px;
+}
+
+.btn {
+	display: inline-block;
+	background: white;
+	border: 0;
+	border-radius: 3px;
+	line-height: 30px;
+	padding: 0 20px;
+	cursor: pointer;
+	outline: none !important;
+}
+
+.btn:hover {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.btn:active {
+	box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.btn + .btn {
+	margin-left: 20px;
+}
+
+.btn-primary {
+	background: green;
+	color: white;
+}
+
+.btn-error {
+	background: red;
+	color: white;
+}
