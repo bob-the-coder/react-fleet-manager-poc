@@ -7,7 +7,7 @@ class TripSegmentPlanner extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			segment: this.props.segment
+			segment: this.props.segment || new TripSegmentModel()
 		}
 	}
 
