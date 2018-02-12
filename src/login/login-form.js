@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 import './login-form.css';
 
 class LoginForm extends Component {
+	handleLogin(){
+		window.location = '/#/trip/plan';
+	}
+
 	render(){
 		return (
 			<div className='lf'>
@@ -9,28 +15,31 @@ class LoginForm extends Component {
 					
 				</div>
 				<div className='lf-line'>
-					<label>Username</label>
-					<input type='text' className='input' placeholder='my-email@service.com' />
+					<TextField
+						hintText="my-email@service.com"
+						floatingLabelText="Email"
+						fullWidth={true}
+		    		/>
 				</div>
 				<div className='lf-line'>
-					<label>Password</label>
-					<input type='password' className='input' placeholder='password' />
+					<TextField
+						hintText="your password"
+						floatingLabelText="Password"
+						fullWidth={true}
+						type='password'
+		    		/>
 				</div>
-				<div className='lf-line lf-center'>
+				<div className='lf-line lf-center margin-top-bottom'>
 					<a href='/'>I've misplaced my password</a>
 				</div>
-				<div className='lf-line'></div>
-				<div className='lf-line'></div>
 				<div className='lf-line'>
-					<button className='btn btn-primary'>
-						<a href='/#/trip/plan'>Log In</a>
-					</button>
+					<RaisedButton primary={true} fullWidth={true} onClick={this.handleLogin} label='Log In' />
 				</div>
-				<div className='lf-line lf-center'>
+				<div className='lf-line lf-center margin-top-bottom'>
 					New user? Join now!
 				</div>
 				<div className='lf-line'>
-					<button className='btn btn-primary'>Create Account</button>
+					<RaisedButton primary={true} fullWidth={true} label='Create Account' />
 				</div>
 			</div>
 		);

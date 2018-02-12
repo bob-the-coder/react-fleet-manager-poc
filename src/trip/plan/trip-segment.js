@@ -4,6 +4,8 @@ class TripSegmentModel {
 		this.id = Math.random();
 		this.departure = props.departure || '';
 		this.destination = props.destination || '';
+		this.depDate = new Date();
+		this.destDate = new Date();
 	}
 
 	getBefore(){

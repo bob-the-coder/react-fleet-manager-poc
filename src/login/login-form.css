@@ -9,23 +9,20 @@
 	overflow: hidden;
 }
 
-.lf .input{
-	width: 100%;
-}
 
 .lf-line {
 	min-height: 1px;
-	margin: 10px 30px;
+	margin: 0 30px;
+}
+
+.lf-line.margin-top-bottom{
+	margin: 20px 30px;
 }
 
 .lf-banner{
 	height: 50px;
 	background: #222;
-	margin-bottom: 40px;
-}
-
-.lf .btn {
-	width: 100%;
+	margin-bottom: 10px;
 }
 
 .lf-center {

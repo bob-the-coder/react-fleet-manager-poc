@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+
 import logo from './logo.svg';
 import './App.css';
 import './theme.css';
@@ -16,22 +20,25 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        <div className="app">
-          <header className="app-header">
-            <img src={logo} className="app-logo" alt="logo" />
-            <span className="app-title">R!der</span>
-          </header>
-          <div className="app-body clearfix">
-          	<div className='app-menu'></div>
-          	<div className='app-content'>
-          		<Route exact path='/' component={LoginForm} />
-          		<Route exact path='/trip/plan' component={TripPlanner} />
-          	</div>
-          	<div className='app-side'>
-          		<Route exact path='/trip/plan' component={TripPlannerControls} />
-          	</div>
-          </div>
-        </div>
+      	<MuiThemeProvider>
+	      	<div className="app">
+	        	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"></link>
+				<header className="app-header">
+				<img src={logo} className="app-logo" alt="logo" />
+				<span className="app-title">R!der</span>
+				</header>
+				<div className="app-body clearfix">
+					<div className='app-menu'></div>
+					<div className='app-content'>
+						<Route exact path='/' component={LoginForm} />
+						<Route exact path='/trip/plan' component={TripPlanner} />
+					</div>
+					<div className='app-side'>
+						<Route exact path='/trip/plan' component={TripPlannerControls} />
+					</div>
+				</div>
+	        </div>
+        </MuiThemeProvider>
       </HashRouter>
     );
   }

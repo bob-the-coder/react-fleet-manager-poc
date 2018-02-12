@@ -37,14 +37,16 @@ class TripPlanner extends Component {
 		
 		let $segments = $$segments.map((segment, index) => {
 			return (
-			<TripSegmentPlanner 
-				key={segment.id} 
-				segment={segment}
-				index={index}
-				addBefore={this.addSegment.bind(this, index)}
-				addAfter={this.addSegment.bind(this, index + 1)}
-				onDelete={this.deleteSegment.bind(this, index)}
-			/>);
+				<TripSegmentPlanner 
+					key={segment.id}
+					segment={segment}
+					index={index}
+					isOnly={$$segments.length === 1}
+					addBefore={this.addSegment.bind(this, index)}
+					addAfter={this.addSegment.bind(this, index + 1)}
+					onDelete={this.deleteSegment.bind(this, index)}
+				/>
+			);
 		})
 
 		return (

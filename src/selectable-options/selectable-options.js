@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 
+import Toggle from 'material-ui/Toggle';
+import {List, ListItem} from 'material-ui/List';
+
 import Checkbox from '../checkbox/checkbox.js';
 
 class SelectableOptions extends Component{
+	static selected = [];
+
 	constructor(props){
 		super(props);
 
-		let options = ['Train', 'Plane', 'Helicopter', 'Boat', 'Yacht'];
+		let options = ['Train', 'Plane' ];
 
 		this.state = {
 			options: options,
-			selected: options.map(o => null)
+			selected: this.props.selected || options.map(o => null)
 		}
 	}
 
@@ -23,11 +28,6 @@ class SelectableOptions extends Component{
 		}else{
 			selected[index] = option;
 		}
-
-		this.setState({
-			options: options,
-			selected: selected
-		});
 	}
 
 	renderOptions(){
@@ -37,7 +37,15 @@ class SelectableOptions extends Component{
 		return options.map((option, index) => {
 			let key = Math.random();
 			let checked = selected.indexOf(option) >= 0;
-			return (<Checkbox key={key} label={option} checked={checked} toggleCheck={this.toggle.bind(this, option, index)} />);
+			return (
+				<ListItem
+					onClick={this.toggle.bind(this, option, index)}>
+				<Toggle
+					label={option}
+					defaultToggled={checked}
+				/>
+				</ListItem>
+			);
 			}
 		);
 	}
@@ -45,9 +53,9 @@ class SelectableOptions extends Component{
 	render(){
 		let $options = this.renderOptions();
 		return (
-			<div className='border-block clearfix'>
+			<List>
 				{$options}
-			</div>
+			</List>
 		);
 	}
 }
