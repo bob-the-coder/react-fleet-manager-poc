@@ -3,6 +3,15 @@ import React, {Component} from 'react';
 import Toggle from 'material-ui/Toggle';
 import {List, ListItem} from 'material-ui/List';
 
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
+
 import Checkbox from '../checkbox/checkbox.js';
 
 class SelectableOptions extends Component{
@@ -38,13 +47,13 @@ class SelectableOptions extends Component{
 			let key = Math.random();
 			let checked = selected.indexOf(option) >= 0;
 			return (
-				<ListItem
+				<TableRowColumn
 					onClick={this.toggle.bind(this, option, index)}>
 				<Toggle
 					label={option}
 					defaultToggled={checked}
 				/>
-				</ListItem>
+				</TableRowColumn>
 			);
 			}
 		);
@@ -53,9 +62,13 @@ class SelectableOptions extends Component{
 	render(){
 		let $options = this.renderOptions();
 		return (
-			<List>
-				{$options}
-			</List>
+			<Table>
+				<TableBody displayRowCheckbox={false}>
+					<TableRow>
+						{$options}
+					</TableRow>
+				</TableBody>
+			</Table>
 		);
 	}
 }

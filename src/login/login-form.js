@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import {ButtonPrimary, ButtonSecondary} from '../ride/Buttons.js';
+import TextField from '../ride/TextField.js';
 import './login-form.css';
 
 class LoginForm extends Component {
@@ -16,16 +16,14 @@ class LoginForm extends Component {
 				</div>
 				<div className='lf-line'>
 					<TextField
-						hintText="my-email@service.com"
-						floatingLabelText="Email"
-						fullWidth={true}
+						hint="my-email@service.com"
+						label="Email"
 		    		/>
 				</div>
 				<div className='lf-line'>
 					<TextField
-						hintText="your password"
-						floatingLabelText="Password"
-						fullWidth={true}
+						hint="your password"
+						label="Password"
 						type='password'
 		    		/>
 				</div>
@@ -33,13 +31,13 @@ class LoginForm extends Component {
 					<a href='/'>I've misplaced my password</a>
 				</div>
 				<div className='lf-line'>
-					<RaisedButton primary={true} fullWidth={true} onClick={this.handleLogin} label='Log In' />
+					<ButtonPrimary onClick={this.handleLogin} label='Log In' />
 				</div>
 				<div className='lf-line lf-center margin-top-bottom'>
 					New user? Join now!
 				</div>
 				<div className='lf-line'>
-					<RaisedButton primary={true} fullWidth={true} label='Create Account' />
+					<ButtonSecondary label='Create Account' />
 				</div>
 			</div>
 		);

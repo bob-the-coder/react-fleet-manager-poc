@@ -3,13 +3,15 @@ import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
+import {ButtonPrimary, ButtonSecondary, ButtonCancel} from '../../ride/Buttons.js';
 
 import SelectableOptions from '../../selectable-options/selectable-options.js';
 
+import TextField from '../../ride/TextField.js';
 import TripSegmentModel from './trip-segment.js';
 import './trip-segment.css';
+
 
 function dateIsBefore(d1, d2){
 	return d1.getDate() <= d2.getDate() &&
@@ -29,19 +31,23 @@ class TripSegmentPlanner extends Component {
 		this.state = {
 			segment: this.props.segment || new TripSegmentModel()
 		}
+		this.refs = {
+			dep: this.state.segment.departure,
+			dest: this.state.segment.destination
+		}
 	}
 
-	changeDeparture(event){
+	changeDeparture(value){
 		let segment = this.state.segment;
-		segment.departure = event.target.value;
+		segment.departure = value;
 		this.setState({
 			segment: segment
 		});
 	}
 
-	changeDestination(event){
+	changeDestination(value){
 		let segment = this.state.segment;
-		segment.destination = event.target.value;
+		segment.destination = value;
 		this.setState({
 			segment: segment
 		});
@@ -55,7 +61,7 @@ class TripSegmentPlanner extends Component {
 		this.props.addAfter(this.state.segment.getAfter());
 	}
 
-	changeDepDate(n, date){
+	changeDepDate(date){
 		let segment = this.state.segment;
 		segment.depDate = date;
 		this.setState({
@@ -63,7 +69,7 @@ class TripSegmentPlanner extends Component {
 		});
 	}
 
-	changeDestDate(n, date){
+	changeDestDate(date){
 		let segment = this.state.segment;
 		segment.destDate = date;
 		this.setState({
@@ -82,60 +88,51 @@ class TripSegmentPlanner extends Component {
 		let $$marginRight = {marginRight : '20px'};
 
 		return (
-			<Paper zDepth={0} className='white-block clearfix'>
-				<div className='ts-col-half'>
+			<div className='white-block clearfix'>
+				<div className='ts-col-half' style={{paddingRight: '10px'}}>
 					<div>
-						<Subheader style={{padding: 0}}>Departure</Subheader>
 						<TextField
-							hintText='City, Airport, Helipad'
-							floatingLabelText='Depart Location'
+							hint='City, Airport, Helipad'
+							label='Depart Location'
 							value={$$segment.departure}
 							onChange={this.changeDeparture.bind(this)}
 						/>
-						<DatePicker 
-							hintText={$$dateTime}
-							mode="landscape"
-							shouldDisableDate={disableDatesBefore(today)}
-							onChange={this.changeDepDate.bind(this)}
+						<TextField
+							hint={$$dateTime}
+							label='Depart Date & Time'
 							value={$$segment.depDate}
-							floatingLabelText='Depart Date & Time'
+							onChange={this.changeDepDate.bind(this)}
 						/>
 					</div>
+				</div>
+				<div className='ts-col-half' style={{paddingLeft: '10px'}}>
 					<div>
-						<Subheader style={{padding: 0}}>Destination</Subheader>
 						<TextField
-							hintText='City, Airport, Helipad'
-							floatingLabelText='Arrival Location'
+							hint='City, Airport, Helipad'
+							label='Arrival Location'
 							value={$$segment.destination}
 							onChange={this.changeDestination.bind(this)}
 						/>
-						<DatePicker 
-							hintText={$$dateTime}
-							mode="landscape"
-							shouldDisableDate={disableDatesBefore($$segment.depDate || today)}
-							onChange={this.changeDestDate.bind(this)}
+						<TextField
+							hint={$$dateTime}
+							label='Arrival Date & Time'
 							value={$$segment.destDate}
-							floatingLabelText='Arrival Date & Time'
+							onChange={this.changeDestDate.bind(this)}
 						/>
 					</div>
 				</div>
-				<div className='ts-col-half'>
-					<div>
-						<Subheader>Transport Options</Subheader>
-						<SelectableOptions />
-					</div>
-				</div>
-				<div style={{textAlign: 'right'}}>
-					<RaisedButton style={$$marginRight} primary={true} onClick={this.addBefore.bind(this)} label='Add Before' />
-					<RaisedButton style={$$marginRight} primary={true} onClick={this.addAfter.bind(this)} label='Add After' />
+				
+				<div style={{width: '100%', float: 'right', textAlign: 'right', marginTop: '20px'}}>
+					<ButtonPrimary style={$$marginRight} onClick={this.addBefore.bind(this)} label='Add Before' />
+					<ButtonPrimary style={$$marginRight} onClick={this.addAfter.bind(this)} label='Add After' />
 					{this.props.isOnly &&
-						<RaisedButton primary={true} onClick={this.handleDelete.bind(this)} label='Reset' />
+						<ButtonCancel onClick={this.handleDelete.bind(this)} label='Reset' />
 					}
 					{!this.props.isOnly &&
-						<RaisedButton primary={true} onClick={this.handleDelete.bind(this)} label='Delete' />
+						<ButtonCancel onClick={this.handleDelete.bind(this)} label='Delete' />
 					}
 				</div>
-			</Paper>
+			</div>
 		);
 	}
 }

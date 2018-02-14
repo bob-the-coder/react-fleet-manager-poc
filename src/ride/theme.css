@@ -1,0 +1,91 @@
+.ride-btn {
+	border: 0;
+	cursor: pointer;
+	height: 32px;
+	min-width: 80px;
+	padding: 0 16px;
+	font-size: 14px;
+	border-radius: 3px;
+	font-family: Roboto, sans-serif;
+	font-weight: 500;
+	outline: none !important;
+	text-transform: uppercase;
+}
+
+.ride-btn:focus {
+	box-shadow: 0 0 0 2px #383838;
+}
+
+.ride-btn.btn-primary, .ride-btn.btn-secondary:hover {
+	background: #cbbc9f;
+	color: white;
+}
+
+.ride-btn.btn-secondary {
+	background: white;
+	color: #baab8e;
+	border: 1px solid #cbbc9f;
+}
+
+.ride-btn.btn-cancel {
+	background: #999999;
+	color: white;
+}
+
+.ride-btn.btn-primary:hover, .ride-btn.btn-cancel:hover {
+	background: #383838;
+	color: white;
+}
+
+.ride-input {
+	outline: none !important;
+	height: 32px;
+	padding: 0 8px;
+	padding-right: 0;
+	display: block;
+	border: 2px solid #cbbc9f;
+	border-radius: 3px;
+	width: 100%;
+}
+
+.ride-input:focus {
+	box-shadow: 0 0 0 1px #cbbc9f;
+}
+
+.ride-input-wrapper{
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.ride-input-wrapper > label {
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 3px;
+}
+
+.ride-input-clear {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	height: 28px;
+	line-height: 28px;
+	width: 28px;
+	text-align: center;
+	cursor: pointer;
+	color: red;
+	background: white;
+	font-size: 28px;
+	display: none;
+	user-select: none !important;
+}
+
+.ride-input:focus + .ride-input-clear,
+.ride-input-wrapper:hover > .ride-input-clear {
+	display: block;
+}
+
+.ride-input-clear:hover {
+	background: #cbbc9f;
+	color: white;
+}

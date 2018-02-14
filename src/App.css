@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
 
 #root{
@@ -24,6 +25,12 @@ body{
   height: 50px;
   padding: 10px;
   color: white;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 20px rgba(18, 18, 18, 1);
 }
 
 .app-title {
@@ -43,10 +50,10 @@ body{
 }
 
 .app-body{
+  position: relative;
   display:block;
-  min-height: calc(100vh - 50px);
-  top: 50px;
-  width: 1200px;
+  min-height: 100vh;
+  width: 1240px;
   margin: 0 auto;
 }
 
@@ -59,15 +66,18 @@ body{
   min-height: 1px;
 }
 
+.app-menu, .app-content {
+  margin-right: 20px;
+}
+
 .app-content {
   width: 800px;
-  padding: 20px;
 }
 
 .fixed {
   position: fixed;
 }
 
-.margin-top-20 {
-  margin-top: 20px;
+.margin-top-70 {
+  margin-top: 70px;
 }
