@@ -1,29 +1,10 @@
 import React, {Component} from 'react';
 
-import Paper from 'material-ui/Paper';
-import Subheader from 'material-ui/Subheader';
-import RaisedButton from 'material-ui/RaisedButton';
-import DatePicker from 'material-ui/DatePicker';
-import {ButtonPrimary, ButtonSecondary, ButtonCancel} from '../../ride/Buttons.js';
-
-import SelectableOptions from '../../selectable-options/selectable-options.js';
+import {ButtonPrimary, ButtonCancel} from '../../ride/Buttons.js';
 
 import TextField from '../../ride/TextField.js';
-import TripSegmentModel from './trip-segment.js';
+import TripSegmentModel from '../trip-segment.js';
 import './trip-segment.css';
-
-
-function dateIsBefore(d1, d2){
-	return d1.getDate() <= d2.getDate() &&
-			d1.getMonth() <= d2.getMonth() &&
-			d1.getFullYear() <= d2.getFullYear();
-}
-
-function disableDatesBefore(thresholdDate) {
-	return function(date) {
-		return dateIsBefore(date, thresholdDate);
-	}
-}
 
 class TripSegmentPlanner extends Component {
 	constructor(props){
@@ -85,7 +66,6 @@ class TripSegmentPlanner extends Component {
 		let today = new Date();
 		let $$dateTime = JSON.stringify(today);
 		let $$segment = this.props.segment;
-		let $$marginRight = {marginRight : '20px'};
 
 		return (
 			<div className='white-block clearfix'>
@@ -123,8 +103,8 @@ class TripSegmentPlanner extends Component {
 				</div>
 				
 				<div style={{width: '100%', float: 'right', textAlign: 'right', marginTop: '20px'}}>
-					<ButtonPrimary style={$$marginRight} onClick={this.addBefore.bind(this)} label='Add Before' />
-					<ButtonPrimary style={$$marginRight} onClick={this.addAfter.bind(this)} label='Add After' />
+					<ButtonPrimary onClick={this.addBefore.bind(this)} label='Add Before' />
+					<ButtonPrimary onClick={this.addAfter.bind(this)} label='Add After' />
 					{this.props.isOnly &&
 						<ButtonCancel onClick={this.handleDelete.bind(this)} label='Reset' />
 					}

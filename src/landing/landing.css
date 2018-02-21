@@ -1,0 +1,119 @@
+.landing-bg {
+	background-image: url('./berlin-map.jpg');
+	background-size: 100% 100%;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:0;
+}
+
+@keyframes landing-background {
+	0%, 9%, 100% {background-image: url('./landing-bg2.jpg');}     
+	10%, 19% {background-image: url('./landing-bg2.jpg');}
+	20%, 29% {background-image: url('./berlin-map.jpg');}
+	30%, 39% {background-image: url('./dubai.jpg');}
+	40%, 49% {background-image: url('./istanbul.jpg');}
+	50%, 59% {background-image: url('./paris.jpg');}
+	60%, 69% {background-image: url('./new-york.jpg');}
+	70%, 79% {background-image: url('./berlin-map.jpg');}
+	80%, 89% {background-image: url('./taj-mahal.jpg');}
+	90%, 99% {background-image: url('./istanbul.jpg');}
+}
+
+.landing-body {
+	text-align: center;
+	position: relative;
+	top: -50px;
+	left: 0;
+	padding-bottom: 200px;
+	width: 100vw;
+	min-height: 100vh;
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+.trip-legs {
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.8);
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	padding: 15px;
+	margin-top: 200px;
+}
+
+.trip-leg + .trip-leg {
+	margin-top: 15px;
+}
+
+.leg-input {
+	background: transparent;
+	color: white;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #A80BFF;
+	border-radius: 3px;
+	padding: 0 10px;
+	width: 200px;
+	outline: none !important;
+}
+
+.leg-input:hover, .leg-input:focus {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 0 1px #A80BFF;
+}
+
+.leg-input.small {
+	width: 120px;
+}
+
+.leg-input.tiny {
+	width: 60px;
+}
+
+.leg-input + .leg-input {
+	margin-left: 15px;
+}
+
+.leg-input > * {
+	color: #383838;
+}
+
+.trip-leg > .leg-input:first-child {
+	border-radius: 30px 0 0 30px;
+	width: 210px;
+	padding-left: 20px;
+}
+
+.trip-leg > .leg-input:last-child {
+	border-radius: 0 30px 30px 0;
+}
+
+.trip-legs > .trip-leg:last-of-type {
+	margin-bottom: 30px;
+}
+
+.trip-legs .ride-btn.btn-secondary:hover {
+	color: #383838;
+}
+
+.cross-button {
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 50%;
+	margin-left: 10px;
+	color: #5C92FF;
+	font-size: 30px;
+	line-height: 30px;
+	height: 34px;
+	width: 34px;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.cross-button:hover {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: #5C92FF;
+}

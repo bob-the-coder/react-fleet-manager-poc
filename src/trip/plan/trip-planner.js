@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import TripSegmentModel from './trip-segment.js';
+import TripSegmentModel from '../trip-segment.js';
 import TripSegmentPlanner from './trip-segment-planner.js';
 
 class TripPlanner extends Component {

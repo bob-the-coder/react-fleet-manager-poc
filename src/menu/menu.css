@@ -1,5 +1,6 @@
 .menu {
 	width: 200px;
+	user-select: none;
 }
 
 .menu-item {
@@ -10,7 +11,7 @@
 }
 
 .menu-item.active, .profile.active {
-	background: #cbbc9f;
+	background: #5C92FF;
 	color: white;
 }
 

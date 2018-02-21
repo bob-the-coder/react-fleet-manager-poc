@@ -1,18 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
+import AuthenticatedComponent from 'ride/AuthenticatedComponent.js';
 
 import './menu.css'
 var faker = require('faker/locale/en');
-
-let routeMatches = function(url){
-	let origin = window.location.origin + '/#';
-	let path = window.location.href.substring(origin.length);
-
-	if(url === '/') {
-		return path === '/';
-	}
-
-	return path.indexOf(url) >= 0;
-}
 
 let user = {
 	name: faker.name.firstName() + ' ' + faker.name.lastName(),
@@ -22,25 +12,25 @@ let user = {
 };
 
 let routes = [
-	{ icon: faker.image.avatar(), label: 'Home', url: '/'},
-	{ icon: faker.image.avatar(), label: 'Login', url: '/login'},
+	{ icon: faker.image.avatar(), label: 'Sandbox', url: '/sandbox'},
+	{ icon: faker.image.avatar(), label: 'Fleet', url: '/fleet'},
 	{ icon: faker.image.avatar(), label: 'Trip Planner', url: '/trip/plan'},
 	{ icon: faker.image.avatar(), label: 'Trip Finder', url: '/trip/find'},
 	{ icon: faker.image.avatar(), label: 'My Trips', url: '/trip/mine'},
 	{ icon: faker.image.avatar(), label: 'Offers', url: '/trip/offers'},
 ];
 
-export default class Menu extends Component {
+export default class Menu extends AuthenticatedComponent {
 	changeLocation(url){
 		window.location = '/#' + url;
 	}
 
 	renderProfile(){
 		return (
-			<div className={'profile' + (routeMatches('/profile') ? ' active' : '')}
+			<div className={'profile' + (window.routeMatches('/profile') ? ' active' : '')}
 				onClick={this.changeLocation.bind(this, '/profile')}>
 				<div className='clearfix'>
-					<img className='profile-pic' src={user.photoUrl} />
+					<img className='profile-pic' src={user.photoUrl} alt=''/>
 					<div>
 						<div>
 							<div className='profile-name'>{user.name}</div>
@@ -54,33 +44,36 @@ export default class Menu extends Component {
 
 	renderRoutes(){
 		return routes.map((r) => {
-			var className = 'menu-item' + (routeMatches(r.url) ? ' active' : '');
+			var className = 'menu-item' + (window.routeMatches(r.url) ? ' active' : '');
 			
 			return (
 				<div 
 					className={className} 
 					key={Math.random()} 
 					onClick={this.changeLocation.bind(this, r.url)}>
-					<img className='menu-icon' src={r.icon} />
+					<img className='menu-icon' src={r.icon} alt='' />
 					{r.label}
 				</div>
 			);
 		});
 	}
 
+	handleLogout(){
+		localStorage.removeItem("cookie");
+		this.checkAuth();
+	}
+
 	renderLogout(){
 		return (
-			<div className='menu-item'>
-				<img className='menu-icon' src={faker.image.avatar()} />
+			<div className='menu-item' onClick={this.handleLogout.bind(this)}>
+				<img className='menu-icon' src={faker.image.avatar()} alt='' />
 				Log Out
 			</div>
 		);
 	}
 
 	render(){
-		let path = window.location.href.substring(window.origin.length + 2);
-
-		if(path === '/') return (<div></div>);
+		if(window.path() === '/' || window.path() === '/login') return null;
 
 		let $items = this.renderRoutes();
 		let $profile = this.renderProfile();

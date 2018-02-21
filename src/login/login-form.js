@@ -5,7 +5,8 @@ import './login-form.css';
 
 class LoginForm extends Component {
 	handleLogin(){
-		window.location = '/#/trip/plan';
+		window.location = '/#/';
+		localStorage.setItem("cookie", "set");
 	}
 
 	render(){

@@ -1,7 +1,7 @@
 .ride-btn {
 	border: 0;
 	cursor: pointer;
-	height: 32px;
+	height: 28px;
 	min-width: 80px;
 	padding: 0 16px;
 	font-size: 14px;
@@ -10,25 +10,30 @@
 	font-weight: 500;
 	outline: none !important;
 	text-transform: uppercase;
+	user-select: none;
 }
 
-.ride-btn:focus {
-	box-shadow: 0 0 0 2px #383838;
+.ride-btn:active:hover {
+	box-shadow: inset 0 2px 2px #383838;
+}
+
+.ride-btn + .ride-btn {
+	margin-left: 20px;
 }
 
 .ride-btn.btn-primary, .ride-btn.btn-secondary:hover {
-	background: #cbbc9f;
+	background: #5C92FF;
 	color: white;
 }
 
 .ride-btn.btn-secondary {
-	background: white;
-	color: #baab8e;
-	border: 1px solid #cbbc9f;
+	background: transparent;
+	color: #5C92FF;
+	border: 1px solid #5C92FF;
 }
 
 .ride-btn.btn-cancel {
-	background: #999999;
+	background: #ff5555;
 	color: white;
 }
 
@@ -39,17 +44,18 @@
 
 .ride-input {
 	outline: none !important;
-	height: 32px;
+	line-height: 28px;
+	height: 28px;
 	padding: 0 8px;
 	padding-right: 0;
 	display: block;
-	border: 2px solid #cbbc9f;
+	border: 1px solid #5C92FF;
 	border-radius: 3px;
 	width: 100%;
 }
 
 .ride-input:focus {
-	box-shadow: 0 0 0 1px #cbbc9f;
+	box-shadow: 0 0 0 1px #5C92FF;
 }
 
 .ride-input-wrapper{
@@ -66,11 +72,11 @@
 
 .ride-input-clear {
 	position: absolute;
-	bottom: 2px;
-	right: 2px;
-	height: 28px;
-	line-height: 28px;
-	width: 28px;
+	bottom: 1px;
+	right: 1px;
+	height: 26px;
+	line-height: 26px;
+	width: 26px;
 	text-align: center;
 	cursor: pointer;
 	color: red;
@@ -86,6 +92,26 @@
 }
 
 .ride-input-clear:hover {
-	background: #cbbc9f;
+	background: #5C92FF;
 	color: white;
+}
+
+.table-controls {
+	position: fixed;
+	left: calc(50vw + 400px);
+	width: 220px;
+
+}
+
+.control-group {
+}
+
+.control-group + .control-group {
+	box-shadow: 0 -11px 0 -10px #c0c0c0;
+	padding-top: 15px;
+	margin-top: 15px;
+}
+
+.control-group > .ride-btn {
+	width: 100%;
 }

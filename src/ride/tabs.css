@@ -1,0 +1,35 @@
+.tabs {
+}
+
+.tab-labels {
+}
+
+.tab-label {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 40px;
+	background: #5C92FF;
+	color: white;
+	border: 2px solid #5C92FF;
+}
+
+.tab-label.active {
+	border-bottom: 0;
+	background: white;
+	color: #222;
+}
+
+.tab-label + .tab-label {
+	border-left: 2px solid #5C92FF;
+}
+
+.tab-content-wrapper {
+	border-top: 2px solid #5C92FF;
+	margin-top: -2px;
+	padding: 20px;
+}
+
+.tab-panel {
+
+}
