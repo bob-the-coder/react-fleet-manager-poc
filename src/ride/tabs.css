@@ -1,31 +1,45 @@
 .tabs {
+	margin-top: 50px;
 }
 
 .tab-labels {
+	height: 50px;
+	margin-top: -60px;
 }
 
 .tab-label {
 	display: inline-block;
+	vertical-align: bottom;
 	height: 40px;
 	line-height: 40px;
 	padding: 0 40px;
 	background: #5C92FF;
 	color: white;
-	border: 2px solid #5C92FF;
+	cursor: pointer;
+}
+
+.tab-labels > .tab-label:first-child {
+	border-radius: 5px 0 0 0;
+}
+
+.tab-labels > .tab-label:last-child {
+	border-radius: 0 5px 0 0;
 }
 
 .tab-label.active {
+	height: 50px;
+	line-height: 50px;
+	border-radius: 5px 5px 0 0 !important;
+	border: 1px solid lightgray;
 	border-bottom: 0;
 	background: white;
 	color: #222;
 }
 
 .tab-label + .tab-label {
-	border-left: 2px solid #5C92FF;
 }
 
 .tab-content-wrapper {
-	border-top: 2px solid #5C92FF;
 	margin-top: -2px;
 	padding: 20px;
 }

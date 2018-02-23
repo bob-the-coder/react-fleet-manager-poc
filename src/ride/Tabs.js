@@ -70,7 +70,7 @@ export class Tabs extends Component {
 		let $tabs = this.props.children.map(tabContent => this.renderTabPanel(tabContent));
 
 		return (
-			<div className='tabs'>
+			<div className='white-block tabs'>
 				<div className='tab-labels'>
 					{$labels}
 				</div>
