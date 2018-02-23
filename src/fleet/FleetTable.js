@@ -51,7 +51,7 @@ export default class FleetTable extends Component {
 		return (
 			<div>
 				<TableControls>
-					<ControlGroup label='Filter'>
+					<ControlGroup>
 						<TextField label='Registration'/>
 						<TextField label='Type'/>
 						<Dropdown label='Category' alias={x => x} options={[1,2,3,4]} value={1}/>

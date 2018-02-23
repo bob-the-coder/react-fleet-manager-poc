@@ -5,12 +5,12 @@ import TextField from 'ride/TextField.js';
 export default class AircraftForm extends Component {
 	render() {
 		return (
-			<Tabs panels={['Base Data', 'Finance', 'Schedule']}>
+			<Tabs panels={['Base Data', 'Fees & Taxes', 'Schedule']}>
 				<Tab panel='Base Data'>
 					<h1>Panel 1</h1>
 					<TextField label='some text 1' />
 				</Tab>
-				<Tab panel='Finance'>
+				<Tab panel='Fees & Taxes'>
 					<h1>Panel 2</h1>
 					<TextField label='some text 2' />
 				</Tab>
