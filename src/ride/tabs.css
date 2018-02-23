@@ -1,21 +1,25 @@
 .tabs {
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .tab-labels {
-	height: 50px;
-	margin-top: -60px;
+	height: 40px;
+	margin-top: -50px;
 }
 
 .tab-label {
 	display: inline-block;
 	vertical-align: bottom;
-	height: 40px;
-	line-height: 40px;
-	padding: 0 40px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 30px;
 	background: #5C92FF;
 	color: white;
 	cursor: pointer;
+}
+
+.tab-label:hover {
+	background: #7EB5FF;
 }
 
 .tab-labels > .tab-label:first-child {
@@ -27,8 +31,8 @@
 }
 
 .tab-label.active {
-	height: 50px;
-	line-height: 50px;
+	height: 40px;
+	line-height: 40px;
 	border-radius: 5px 5px 0 0 !important;
 	border: 1px solid lightgray;
 	border-bottom: 0;
